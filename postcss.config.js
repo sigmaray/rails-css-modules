@@ -7,6 +7,11 @@ module.exports = {
         flexbox: 'no-2009'
       },
       stage: 3
+    }),
+    require('postcss-modules')({
+      modules: true,
+      generateScopedName: '[name]__[local]___[hash:base64:5]',
+      globalModulePaths: [/\/global\//]
     })
   ]
 }

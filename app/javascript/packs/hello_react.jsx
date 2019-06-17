@@ -5,23 +5,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import styles from '../styles/hello-react'
+
+import '../styles/global/baz.sass'
+import '../styles/foobar.sass'
+import styles from '../styles/foobar.sass.json' // importing css class map
 
 const Hello = props => (
-  <div className={styles.helloReact}>Hello {props.name}!</div>
+  <div className={styles.foobar}>Using foobar css class in React</div>
 )
-
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <Hello />,
     document.body.appendChild(document.createElement('div')),
   )
 })
